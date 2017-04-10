@@ -12,11 +12,10 @@
 </head>
 <body>
 
-<pre id="container"><code id="code" name="text" class="line-numbers language-html" contenteditable>
-Your code goes here
-</code></pre>
+	<textarea id="code"></textarea>
 
 	<div id="window"></div>
-	<button id="run" onclick="run()" style="position: absolute; top: 91vh; left: 0.5em;">Run</button>
+	<button id="run" onclick="run(code)">Run</button>
+	<button id="highlight" onclick="highlight()">Highlight</button>
 </body>
 </html>
