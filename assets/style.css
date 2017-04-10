@@ -1,23 +1,16 @@
-body {
-	background-color: #252525;
-}
+.center { position: relative; top: 1em; margin: auto; text-align: center; }
 
-.center {
-	position: relative;
-	top: 1em;
-
-	margin: auto;
-	text-align: center;
-}
-
-.links {
-	position: absolute;
-	top: 1em;
-	left: 1em;
-}
+.links { position: absolute; top: 1em; left: 1em; }
 
 .links a { display: block; }
 
 .links a:hover { background-color: rgb(100, 100, 100); }
 
+.code { width:20em; position: relative; top: 1em; text-align: left; }
+
 #wip { position: relative; top: 10em; }
+
+/*EDITOR*/
+#code { width: 49vw; height: 88vh; resize: none; }
+#window { width: 49vw; height: 98vh; position: absolute; top: 0.5em; left: 50vw; }
+#run { width: 10em; height: 5em; position: absolute; top: 91vh; left: 0.5em; }
