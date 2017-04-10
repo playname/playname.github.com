@@ -11,6 +11,6 @@
 #wip { position: relative; top: 10em; }
 
 /*EDITOR*/
-#code { width: 49vw; height: 88vh; resize: none; }
+#container { width: 43vw; height: 85vh; resize: none; }
 #window { width: 49vw; height: 98vh; position: absolute; top: 0.5em; left: 50vw; }
-#run { width: 10em; height: 5em; position: absolute; top: 91vh; left: 0.5em; }
+#run { width: 10em; height: 5em; position: absolute; top: 91vh; left: 0.5em; background-color: rgb(10, 255, 0); }

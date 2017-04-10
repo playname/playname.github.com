@@ -3,16 +3,20 @@
 <head>
 	<title>HTML/Javascript/CSS editor</title>
 	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="../assets/style.css">
+	<link rel="stylesheet" href="../assets/prism/prism.css">
+	<script src="../assets/prism/prism.js"></script>
+	<script src="editor.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 
-	<textarea id="code" wrap="smart"></textarea>
-	<div id="window"></div>
-	<button id="run" onclick="run()">Run</button>
+<pre id="container"><code id="code" name="text" class="line-numbers language-html" contenteditable>
+Your code goes here
+</code></pre>
 
-	<link rel="stylesheet" href="../assets/google-code-prettify/prettify.css">
-	<link rel="stylesheet" href="../assets/style.css">
-	<script src="../assets/google-code-prettify/prettify.js"></script>
-	<script src="editor.js"></script>
+	<div id="window"></div>
+	<button id="run" onclick="run()" style="position: absolute; top: 91vh; left: 0.5em;">Run</button>
 </body>
 </html>
