@@ -1,0 +1,21 @@
+body {
+	background-color: #252525;
+}
+
+.center {
+	position: relative;
+	top: 1em;
+
+	margin: auto;
+	text-align: center;
+}
+
+.links {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+}
+
+.links a {display: block;}
+
+.links a:hover {background-color: rgb(100, 100, 100);}
