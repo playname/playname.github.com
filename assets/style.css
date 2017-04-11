@@ -8,10 +8,11 @@
 
 .code { width:20em; position: relative; top: 1em; text-align: left; }
 
-#wip { position: relative; top: 10em; }
+.terminal { color: #0F0; }
 
+input { background-color: #252525; color: #0F0; border-style: none; width: 96vw; }
 /*EDITOR*/
-#code { width: 49vw; height: 89vh; resize: none; }
+#code { width: 48vw; height: 89vh; resize: none; }
 #window { width: 49vw; height: 98vh; position: absolute; top: 0.5em; left: 50vw; }
 #run { width: 10em; height: 5em; position: absolute; top: 91vh; left: 0.5em; background-color: rgb(10, 255, 0); }
 #highlight { width: 10em; height: 5em; position: absolute; top: 91vh; left: 11em; background-color: rgb(10, 255, 0); }
