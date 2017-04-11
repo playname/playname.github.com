@@ -1,3 +1,3 @@
 # playname.github.com
 
-This website is WIP.
+Just a small website with a little Pong game and a code editor for playing with HTML and Javascript.
