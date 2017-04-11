@@ -1,6 +1,6 @@
 window.onload = terminal();
 var pressed = false;
-var commands = ["cd", " clear", " echo", " exit", " help", "ls"];
+var commands = ["cd", " clear", " echo", " exit", " help", " ls"];
 var links = ["Youtube", "Github", "Reddit", "Pong", "CodeEditor", "Terminal"];
 
 function terminal() {
