@@ -36,11 +36,13 @@ function test(text) {
 function echo(text, isCmd) {
 	if (isCmd) {
 		var s = text.split(" ");
+		var string = "";
 		for (var i = 1; i < s.length; i++) {
-			$("#output").prepend("<div class='output'>"+s[i]+"</div>");
+			string = string+s[i]+" ";
 		}
+		$("#output").prepend("<div class='output'>"+string+"</div>");
+
 	} else {
-		console.log("Echo", isCmd);
 		$("#output").prepend("<div class='output'>"+text+"</div>");
 	}
 }
