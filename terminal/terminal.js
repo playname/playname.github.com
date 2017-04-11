@@ -72,7 +72,7 @@ function cd(link) {
 			window.location.href = "https://playname.github.io/terminal";
 			break;
 		default:
-			echo('Link"'+link+'" not found.', false);
+			echo('Link "'+link+'" not found.', false);
 			break;
 	}
 }
