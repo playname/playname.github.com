@@ -1,6 +1,6 @@
 window.onload = terminal();
 var pressed = false;
-var commands = ["cd", " clear", " echo", " exit", " help", " ls"];
+var commands = ["cd [LINK]", " clear", " echo [TEXT]", " exit", " help", " ls"];
 var links = ["Youtube", "Github", "Reddit", "Pong", "CodeEditor", "Terminal"];
 
 function terminal() {
@@ -26,7 +26,7 @@ function test(text) {
 
 	else if (text == "exit") {window.location.href = "https://playname.github.io";}
 
-	else if (text == "help") {echo(commands, false);}
+	else if (text == "help") {help();}
 
 	else if (text == "ls") {ls();}
 
@@ -42,6 +42,12 @@ function echo(text, isCmd) {
 	} else {
 		console.log("Echo", isCmd);
 		$("#output").prepend("<div class='output'>"+text+"</div>");
+	}
+}
+
+function help() {
+	for (var i = 0; i < commands.length; i++) {
+		echo(commands[i], false);
 	}
 }
 
