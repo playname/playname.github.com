@@ -4,6 +4,7 @@ var commands = ["cd [LINK]", " clear", " echo [TEXT]", " exit", " help", " ls"];
 var links = ["Youtube", "Github", "Reddit", "Pong", "CodeEditor", "Terminal"];
 
 function terminal() {
+	$("#input").focus();
 	requestAnimationFrame(terminal);
 	$("#input").keypress(function(e) {
 		if (!pressed && e.which == 13 && $("#input").val() != "") {
