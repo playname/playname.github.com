@@ -16,7 +16,8 @@ function main() {
 
 function update() {
   //TODO: debug, settings, other update stuff
-  $(document).keydown(function(e) {if (e.which == 83) openSettings();});
+  $("#bgUrl").keydown(function(e) {bgByUrl();});
+  $(document).keydown(function(e) {if (e.which == 83 && !$("#bgUrl").is(":focus")) openSettings();});
 }
 
 function openSettings() {$("#settings").css({"position":"relative", "top":"1em", "left":"1em"});}
@@ -41,6 +42,11 @@ function changeBg() {
 
 function changeBg(img) {
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
+}
+
+function bgByUrl() {
+  var url = $("#bgUrl").val();
+  $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
 }
 
 function konami() {
