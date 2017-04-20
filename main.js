@@ -39,6 +39,10 @@ function changeBg() {
   }
 }
 
+function changeBg(img) {
+  $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
+}
+
 function konami() {
   $(document).keydown(function(e) {
     if (!pressed) {
