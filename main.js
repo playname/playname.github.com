@@ -10,13 +10,22 @@ window.onload = main();
 
 function main() {
   requestAnimationFrame(main);
-
   update();
   if (k) konami();
 }
 
 function update() {
   //TODO: debug, settings, other update stuff
+  $(document).keydown(function(e) {if (e.which == 83) openSettings();});
+}
+
+function openSettings() {$("#settings").css({"position":"relative", "top":"1em", "left":"1em"});}
+function closeSettings() {$("#settings").css({"position":"absolute", "top":"-100vh", "left":"-100vw"});}
+
+var settings = {
+  resetBg: function() {
+    $("body").css("background-image", "");
+  }
 }
 
 function changeBg() {

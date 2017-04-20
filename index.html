@@ -23,7 +23,7 @@
 		<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/8Tz0uBcxx8o" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div>
+	<div id="background">
 		<h2>Select background image</h2><!--TODO: Change text-->
 		<input type="file" id="bg" onchange="changeBg()">
 	</div>
@@ -34,5 +34,14 @@
 		<a href="/editor">Code editor</a>
 		<a href="/terminal">Terminal</a>
 	</div>
+
+	<div id="settings">
+		<h1>Settings</h1>
+
+		<button onclick="settings.resetBg()">Reset background</button><div></div>
+
+		<button onclick="closeSettings()">Close settings</button>
+	</div>
+
 </body>
 </html>

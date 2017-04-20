@@ -7,3 +7,5 @@ Features:
 	-a code editor for playing with HTML/CSS/Javascript
 
 	-a UNIX-like terminal
+
+	-settings accessible with "s"

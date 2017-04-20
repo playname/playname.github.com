@@ -3,7 +3,9 @@
 .links { position: absolute; top: 1em; left: 1em; }
 .links a { display: block; }
 .links a:hover { background-color: rgb(100, 100, 100); }
-#bg { background: none; }
+#background { background: none; position: absolute; top: 11vh; left: 68vw; }
+#background input { width: 32vw; background: none; }
+#settings { position: absolute; top: -100vh; left: -100vw; width: 98vw; }
 
 /*TERMINAL*/
 .terminal { color: #0F0; }
