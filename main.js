@@ -16,7 +16,7 @@ function main() {
 
 function update() {
   //TODO: debug, settings, other update stuff
-  $("#bgUrl").keydown(function(e) {bgByUrl();});
+  $("#bgUrl").keydown(function(e) {if (e.which == 13) bgByUrl();});
   $(document).keydown(function(e) {if (e.which == 83 && !$("#bgUrl").is(":focus")) openSettings();});
 }
 
