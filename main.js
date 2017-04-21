@@ -52,7 +52,7 @@ function generateUrl() {
   }
 }
 
-function changeBg() {
+function changeBgFile() {
   var file = $("#bg")[0].files[0];
   var reader = new FileReader();
   reader.onloadend = function(){
