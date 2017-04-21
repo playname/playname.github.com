@@ -5,6 +5,8 @@ function hideHint(hintId) { $("#"+hintId).remove(); }*/
 var k = true;
 var stage = 0;
 var pressed = false;
+//Url
+var background;
 
 setTimeout(function() {window.onload = setup();}, 500);
 
@@ -40,6 +42,16 @@ var settings = {
   }
 }
 
+function generateUrl() {
+  if (!background) {
+    var url = "https://playname.github.io/";
+    $("#siteUrl").val(url);
+  } else {
+    var url = "https://playname.github.io/" + background;
+    $("#siteUrl").val(url);
+  }
+}
+
 function changeBg() {
   var file = $("#bg")[0].files[0];
   var reader = new FileReader();
@@ -53,11 +65,13 @@ function changeBg() {
 
 function changeBg(img) {
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
+  background = "?img=" + img.replace("assets/img/backgrounds/", "").replace(".jpg", "");
 }
 
 function bgByUrl() {
   var url = $("#bgUrl").val();
   $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
+  background = "?url=" + url;
 }
 
 function konami() {
