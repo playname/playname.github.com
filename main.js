@@ -6,13 +6,15 @@ var k = true;
 var stage = 0;
 var pressed = false;
 
-window.onload = setup();
+setTimeout(function() {window.onload = setup();}, 500);
 
 function setup() {
-  var args = location.search;
-  if (args == "?a") {
-    changeBg("https://playname.github.io/assets/img/backgrounds/1.jpg");
-  }
+  var args = location.search.split("=");
+
+  if (args[0] == "?url")
+    changeBg(args[1]);
+  else if (args[0] == "?img")
+    changeBg("https://playname.github.io/assets/img/backgrounds/" + args[1] + ".jpg");
 
   main();
 }
