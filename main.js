@@ -11,12 +11,20 @@ var background;
 setTimeout(function() {window.onload = setup();}, 500);
 
 function setup() {
-  var args = location.search.split("=");
+  var args = location.search.split("&");
 
-  if (args[0] == "?url")
-    changeBg(args[1]);
-  else if (args[0] == "?img")
-    changeBg("https://playname.github.io/assets/img/backgrounds/" + args[1] + ".jpg");
+  for (var i = 0; i < args.length; i++) {
+    var arg = args[i].split("=");
+
+    switch (arg[0]) {
+      case "?url":
+        changeBg(arg[1]);
+      case "?img":
+        changeBg("https://playname.github.io/assets/img/backgrounds/" + arg[1] + ".jpg");
+      case "?v":
+        $("#video").attr("src", "https://www.youtube.com/embed/" + arg[1]);
+    }
+  }
 
   main();
 }
