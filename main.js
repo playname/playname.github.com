@@ -6,7 +6,16 @@ var k = true;
 var stage = 0;
 var pressed = false;
 
-window.onload = main();
+window.onload = setup();
+
+function setup() {
+  var args = location.search;
+  if (args == "?a") {
+    changeBg("https://playname.github.io/assets/img/backgrounds/1.jpg");
+  }
+
+  main();
+}
 
 function main() {
   requestAnimationFrame(main);
