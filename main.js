@@ -40,13 +40,6 @@ var settings = {
   }
 }
 
-function setBgUrl(img, isUrl) {
-  if (isUrl)
-    location = "https://playname.github.io/?url=" + img;
-  else
-    location = "https://playname.github.io/?img=" + img;
-}
-
 function changeBg() {
   var file = $("#bg")[0].files[0];
   var reader = new FileReader();
@@ -60,13 +53,11 @@ function changeBg() {
 
 function changeBg(img) {
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
-  setBgUrl(img, false);
 }
 
 function bgByUrl() {
   var url = $("#bgUrl").val();
   $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
-  setBgUrl(url, true);
 }
 
 function konami() {
