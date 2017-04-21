@@ -11,9 +11,9 @@ setTimeout(function() {window.onload = setup();}, 500);
 function setup() {
   var args = location.search.split("=");
 
-  if (args[0] == "?url")
+  if (args[0] == "?url" && args[2] == "=false")
     changeBg(args[1]);
-  else if (args[0] == "?img")
+  else if (args[0] == "?img" && args[2] == "=false")
     changeBg("https://playname.github.io/assets/img/backgrounds/" + args[1] + ".jpg");
 
   main();
@@ -42,9 +42,9 @@ var settings = {
 
 function setBgUrl(img, isUrl) {
   if (isUrl)
-    location = "https://playname.github.io/?url=" + img;
+    location = "https://playname.github.io/?url=" + img + "=false";
   else
-    location = "https://playname.github.io/?img=" + img;
+    location = "https://playname.github.io/?img=" + img + "=false";
 }
 
 function changeBg() {
@@ -58,15 +58,15 @@ function changeBg() {
   }
 }
 
-function changeBg(img) {
+function changeBg(img, isUserRequest) {
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
-  setBgUrl(img, false);
+  if (!isUserRequest) setBgUrl(img, false);
 }
 
-function bgByUrl() {
+function bgByUrl(isUserRequest) {
   var url = $("#bgUrl").val();
   $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
-  setBgUrl(url, true);
+  if (!isUserRequest) setBgUrl(url, true);
 }
 
 function konami() {
