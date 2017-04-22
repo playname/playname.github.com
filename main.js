@@ -7,6 +7,8 @@ var stage = 0;
 var pressed = false;
 //Url
 var background;
+var vid;
+var hasVid;
 
 setTimeout(function() {window.onload = setup();}, 500);
 
@@ -23,6 +25,8 @@ function setup() {
         changeBg("https://playname.github.io/assets/img/backgrounds/" + arg[1] + ".jpg");
       case "?v":
         $("#video").attr("src", "https://www.youtube.com/embed/" + arg[1]);
+        vid = arg[1];
+        hasVid = true;
     }
   }
 
@@ -50,12 +54,18 @@ var settings = {
   }
 }
 
+//TODO: fix it
 function generateUrl() {
+  var url = "https://playname.github.io/";
+
   if (!background) {
-    var url = "https://playname.github.io/";
     $("#siteUrl").val(url);
   } else {
-    var url = "https://playname.github.io/" + background;
+    url += background;
+    $("#siteUrl").val(url);
+  }
+  if (hasVid) {
+    url += "&?v=" + vid;
     $("#siteUrl").val(url);
   }
 }
@@ -74,6 +84,9 @@ function changeBgFile() {
 function changeBg(img) {
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
   background = "?img=" + img.replace("assets/img/backgrounds/", "").replace(".jpg", "");
+  if (background.includes("https://playname.github.io/")) {
+    background = background.replace("https://playname.github.io/", "");
+  }
 }
 
 function bgByUrl() {
