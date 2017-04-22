@@ -54,7 +54,6 @@ var settings = {
   }
 }
 
-//TODO: fix it
 function generateUrl() {
   var url = "https://playname.github.io/";
 
