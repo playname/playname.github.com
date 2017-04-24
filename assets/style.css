@@ -9,7 +9,7 @@
 
 /*TERMINAL*/
 .terminal { color: #0F0; }
-input { background-color: #252525; color: #0F0; border-style: none; width: 96vw; }
+input[name="input"] { background-color: #252525; color: #0F0; border-style: none; width: 96vw; }
 
 /*EDITOR*/
 .code { width:20em; position: relative; top: 1em; text-align: left; }

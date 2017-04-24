@@ -4,16 +4,16 @@ var commands = ["cd [LINK]", " clear", " echo [TEXT]", " exit", " help", " ls"];
 var links = ["Youtube", "Github", "Reddit", "Pong", "CodeEditor", "Terminal"];
 
 function terminal() {
-	$("#input").focus();
+	$("input").focus();
 	requestAnimationFrame(terminal);
-	$("#input").keypress(function(e) {
-		if (!pressed && e.which == 13 && $("#input").val() != "") {
+	$("input").keypress(function(e) {
+		if (!pressed && e.which == 13 && $("input").val() != "") {
 			pressed = true;
-			test($("#input").val());
-			$("#input").val("");
+			test($("input").val());
+			$("input").val("");
 		}
 	});
-	$("#input").keyup(function(e) {if (pressed) {pressed = false;}});
+	$("input").keyup(function(e) {if (pressed) {pressed = false;}});
 }
 
 function test(text) {
