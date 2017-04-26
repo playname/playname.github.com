@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to...</title>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <script>
+    var input = location.search;
+
+    window.onload = function() {
+      var i = input.split("=");
+      decrypt(i[1]);
+    }
+
+    function decrypt(text) {
+      var tmp = new Array(text.length);
+
+      for (var i = 0; i < tmp.length; i++) {
+        var t = ~(-text.charCodeAt(i));       //TODO: Fix "text.charCodeAt is not a function"
+        console.log(t);
+        tmp[i] = String.fromCharCode(t);
+      }
+      tmp = tmp.join("");
+
+      location = tmp;
+    }
+  </script>
+</body>
+</html>
