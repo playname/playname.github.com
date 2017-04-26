@@ -7,6 +7,8 @@
 </head>
 <body>
   <script>
+    //TODO: still very weird
+
     var input = location.search;
 
     window.onload = function() {
@@ -18,7 +20,7 @@
       var tmp = new Array(text.length);
 
       for (var i = 0; i < tmp.length; i++) {
-        var t = ~(-text.charCodeAt(i));       //TODO: Fix "text.charCodeAt is not a function"
+        var t = ~(-text.charCodeAt(i));
         console.log(t);
         tmp[i] = String.fromCharCode(t);
       }
