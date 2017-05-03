@@ -1,4 +1,4 @@
-function generate() {
+/*function generate() {
   var url = $("#in").val();
   var link = "https://playname.github.io/rr/?l=";
   var tmp = new Array(url.length);
@@ -10,5 +10,13 @@ function generate() {
   tmp = tmp.join("");
 
   link = link + tmp;
+  $("#out").text(link);
+}*/
+
+function generate() {
+  var url = $("#in").val();
+  var link = "https://playname.github.io/rr/?l=";
+
+  link = link + url;
   $("#out").text(link);
 }
