@@ -97,7 +97,7 @@ function bgByUrl() {
 
 function bgByLink(url) {
   console.log(url);
-  $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
+  $("body").css({"background-image":"url(" + url + ")", "background-size":"cover"});
   background = "?url=" + url;
 }
 
