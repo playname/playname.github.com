@@ -82,6 +82,7 @@ function changeBgFile() {
 }
 
 function changeBg(img) {
+  console.log("Hi");
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
   background = "?img=" + img.replace("assets/img/backgrounds/", "").replace(".jpg", "");
   if (background.includes("https://playname.github.io/")) {
