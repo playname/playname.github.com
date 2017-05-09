@@ -21,7 +21,6 @@ function setup() {
     switch (arg[0]) {
       case "?url":
         changeBg(arg[1]);
-        //bgByLink(arg[1]);
         break;
       case "?img":
         changeBg("https://playname.github.io/assets/img/backgrounds/" + arg[1] + ".jpg");
@@ -95,11 +94,6 @@ function changeBg(img) {
 function bgByUrl() {
   var url = $("#bgUrl").val();
   $("body").css({"background-image":"url('" + url + "')", "background-size":"cover"});
-  background = "?url=" + url;
-}
-
-function bgByLink(url) {
-  $("body").css({"background-image":"url(" + url + ")", "background-size":"cover"});
   background = "?url=" + url;
 }
 
