@@ -22,6 +22,7 @@ function setup() {
       case "?url":
         //changeBg(arg[1]);
         bgByLink(arg[1]);
+        console.log("url");
       case "?img":
         changeBg("https://playname.github.io/assets/img/backgrounds/" + arg[1] + ".jpg");
       case "?v":
