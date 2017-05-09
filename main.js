@@ -20,14 +20,17 @@ function setup() {
 
     switch (arg[0]) {
       case "?url":
-        //changeBg(arg[1]);
-        bgByLink(arg[1]);
+        changeBg(arg[1]);
+        //bgByLink(arg[1]);
+        break;
       case "?img":
         changeBg("https://playname.github.io/assets/img/backgrounds/" + arg[1] + ".jpg");
+        break;
       case "?v":
         $("#video").attr("src", "https://www.youtube.com/embed/" + arg[1]);
         vid = arg[1];
         hasVid = true;
+        break;
     }
   }
 
@@ -82,7 +85,6 @@ function changeBgFile() {
 }
 
 function changeBg(img) {
-  console.log("Hi");
   $("body").css({"background-image":"url(" + img + ")", "background-size":"cover"});
   background = "?img=" + img.replace("assets/img/backgrounds/", "").replace(".jpg", "");
   if (background.includes("https://playname.github.io/")) {
@@ -97,7 +99,6 @@ function bgByUrl() {
 }
 
 function bgByLink(url) {
-  console.log(url);
   $("body").css({"background-image":"url(" + url + ")", "background-size":"cover"});
   background = "?url=" + url;
 }
