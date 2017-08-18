@@ -1,4 +1,4 @@
-# playname.github.com
+# playname.github.io
 
 Features:
 
