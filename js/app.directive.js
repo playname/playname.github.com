@@ -2,7 +2,7 @@ pApp
     .directive("news", function () {
         return {
             restrict: "E",
-            template: "<iframe class='hidden-xs' width='600' height='500' src='http://feeds.bbci.co.uk/news/world/rss.xml' frameborder='0' ng-show='show' id='news'></iframe>"
+            template: "<iframe class='hidden-xs' width='600' height='500' src='https://feeds.bbci.co.uk/news/world/rss.xml' frameborder='0' ng-show='show' id='news'></iframe>"
         };
     })
     .directive("nbtn", function () {
