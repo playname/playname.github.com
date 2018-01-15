@@ -5,7 +5,7 @@ angular.module("pApp")
         });
     }])
     .controller("NewsCtrl", ["$scope", "$http", "$interval", "$log", "utils", function ($scope, $http, $interval, $log, utils) {
-        const nUrl = "http://feeds.bbci.co.uk/news/world/rss.xml";
+        const nUrl = "https://feeds.bbci.co.uk/news/world/rss.xml";
         
         $scope.show = false;
         $scope.action = "Show";
