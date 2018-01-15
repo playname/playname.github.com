@@ -1,0 +1,19 @@
+body {background-color: #333; color: #FFF; font-family: sans-serif;}
+a {color: darkorange; font-size: 1.25vw; text-decoration: none;}
+a:hover {color: yellow; text-decoration: none;}
+
+h1 {font-size: 3vw;}
+h2 {font-size: 2vw;}
+
+iframe {width: 30vw; height: 30vh;}
+
+md-toast {background-color: greenyellow;}
+
+.center {text-align: center;}
+.links {position: relative; top: 1em; left: 1em;}
+.smIcon {position: relative; top: -2px;}
+.bg {position: relative;}
+
+#nBtn {position: relative; top: 2em; left: -0.63em;}
+#news {position: relative; top: 2em;}
+#link {color: darkorange;}

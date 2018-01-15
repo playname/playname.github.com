@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Playname's website!</title>
+	<meta charset="utf-8">
+	<meta name="google-site-verification" content="MhMLDEfEvAzHc7DAOV1_zZSo0kFnBKIvNw--JvHUHIY" /> <!--Note to me (Playname) DO NOT REMOVE-->
+
+	<meta name="keywords" content="Playname, KSP">
+
+	<link rel="stylesheet" href="assets/theme.css">
+	<link rel="stylesheet" href="assets/style.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="center">
+		<h1>Welcome!</h1>
+
+		<div>
+			<a href="https://www.youtube.com/channel/UChVH_oFqQV6j8zOpZawz1zQ"><img src="assets/img/youtube.png" width="45" height="45"></a>
+			<a href="https://github.com/playname"><img src="assets/img/github.png" width="40" height="40"></a>
+			<a href="https://www.reddit.com/user/Playname"><img src="assets/img/reddit.png" width="100" height="40"></a>
+		</div>
+
+		<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/8Tz0uBcxx8o" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+	<div id="background">
+		<h2>Select a background</h2>
+
+		<img src="assets/img/backgrounds/1.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/1.jpg')"></img>
+		<img src="assets/img/backgrounds/2.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/2.jpg')"></img>
+		<img src="assets/img/backgrounds/3.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/3.jpg')"></img>
+		<img src="assets/img/backgrounds/4.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/4.jpg')"></img>
+
+		<h3>Or upload one manually</h3>
+		<input type="file" id="bg" onchange="changeBgFile()">
+		<input type="text" id="bgUrl" placeholder="URL" style="width: 20vw;"><button onclick="bgByUrl()">Submit</button>
+		<input type="text" id="siteUrl" style="width: 17.08vw;"><button onclick="generateUrl()">Generate URL</button>
+	</div>
+
+	<div class="links" id="links">
+		<h1>Links</h1>
+		<a href="/Pong">Pong</a>
+		<a href="/editor">Code editor</a>
+		<a href="/terminal">Terminal</a>
+		<a href="/reroute">Reroute</a>
+	</div>
+
+	<div id="settings">
+		<h1>Settings</h1>
+
+		<button onclick="settings.resetBg()">Reset background</button><div></div>
+
+		<button onclick="closeSettings()">Close settings</button>
+	</div>
+
+</body>
+</html>

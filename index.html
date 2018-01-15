@@ -1,57 +1,95 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Welcome to Playname's website!</title>
-	<meta charset="utf-8">
-	<meta name="google-site-verification" content="MhMLDEfEvAzHc7DAOV1_zZSo0kFnBKIvNw--JvHUHIY" /> <!--Note to me (Playname) DO NOT REMOVE-->
+<html ng-app="pApp" ng-cloak>
+    <head>
+        <title>Playname</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="keywords" content="Playname, KSP">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        
+        <script src="js/app.js"></script>
+        <script src="js/app.factory.js"></script>
+        <script src="js/app.directive.js"></script>
+        <script src="js/app.controller.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link rel="stylesheet" href="resources/styles.css">
+        <!--<link rel="stylesheet" href="resources/normalize.css">-->
+    </head>
+    <body ng-controller="bgCtrl" ng-attr-style="background: rgb({{color.red}}, {{color.green}}, {{color.blue}})">
+        <div class="row-fluid">
+            <div class="links col-xs-4 col-md-4">
+                <h2>Links</h2>
 
-	<link rel="stylesheet" href="assets/theme.css">
-	<link rel="stylesheet" href="assets/style.css">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="main.js"></script>
-</head>
-<body>
-	<div class="center">
-		<h1>Welcome!</h1>
+                <table ng-controller="LinksCtrl">
+                    <tr ng-repeat="link in links">
+                        <td><a href="{{link.url}}">{{link.name}}</a></td>
+                    </tr>
+                </table>
+            </div>
 
-		<div>
-			<a href="https://www.youtube.com/channel/UChVH_oFqQV6j8zOpZawz1zQ"><img src="assets/img/youtube.png" width="45" height="45"></a>
-			<a href="https://github.com/playname"><img src="assets/img/github.png" width="40" height="40"></a>
-			<a href="https://www.reddit.com/user/Playname"><img src="assets/img/reddit.png" width="100" height="40"></a>
-		</div>
+            <div class="center col-xs-4 col-md-4">
+                <h1>Welcome!</h1>
 
-		<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/8Tz0uBcxx8o" frameborder="0" allowfullscreen></iframe>
-	</div>
+                <div>
+                    <a href="https://www.youtube.com/channel/UChVH_oFqQV6j8zOpZawz1zQ" class="hidden-xs">
+                        <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+                            <img class="smIcon" src="resources/img/youtube.png" width="50" height="50" alt="YouTube">
+                        </md-button>
+                    </a>
 
-	<div id="background">
-		<h2>Select a background</h2>
+                    &nbsp;
+                    <a href="https://github.com/playname" class="hidden-xs">
+                        <md-button class="md-fab md-primary md-hue-2 hidden-xs" aria-label="Profile">
+                            <img class="smIcon" src="resources/img/github.png" width="30" height="30" alt="GitHub">
+                        </md-button>
+                    </a>
+                </div>
 
-		<img src="assets/img/backgrounds/1.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/1.jpg')"></img>
-		<img src="assets/img/backgrounds/2.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/2.jpg')"></img>
-		<img src="assets/img/backgrounds/3.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/3.jpg')"></img>
-		<img src="assets/img/backgrounds/4.jpg" width="100" height="100" onclick="changeBg('assets/img/backgrounds/4.jpg')"></img>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tYp7wXqU9d4" frameborder="0" allowfullscreen class="video"></iframe>
+            </div>
 
-		<h3>Or upload one manually</h3>
-		<input type="file" id="bg" onchange="changeBgFile()">
-		<input type="text" id="bgUrl" placeholder="URL" style="width: 20vw;"><button onclick="bgByUrl()">Submit</button>
-		<input type="text" id="siteUrl" style="width: 17.08vw;"><button onclick="generateUrl()">Generate URL</button>
-	</div>
+            <div class="col-xs-4 col-md-4" ng-controller="NewsCtrl" style="position: relative; top: 6em;">
+                <nbtn></nbtn>
+                <news></news>
+            </div>
+        </div>
 
-	<div class="links" id="links">
-		<h1>Links</h1>
-		<a href="/editor">Code editor</a>
-		<a href="/reroute">Reroute</a>
-	</div>
+        <div class="row-fluid bg">
+            <div class="center col-xs-12">
+                <h2>Select a background color</h2>
+                <md-slider-container>
+                    <span>R</span>
+                    <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider" disabled>
+                    </md-input-container>
+                </md-slider-container>
 
-	<div id="settings">
-		<h1>Settings</h1>
+                <md-slider-container>
+                    <span>G</span>
+                    <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider" disabled>
+                    </md-input-container>
+                </md-slider-container>
 
-		<button onclick="settings.resetBg()">Reset background</button><div></div>
-
-		<button onclick="closeSettings()">Close settings</button>
-	</div>
-
-</body>
+                <md-slider-container>
+                    <span class="md-body-1">B</span>
+                    <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="md-primary">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider" disabled>
+                    </md-input-container>
+                </md-slider-container>
+            </div>
+        </div>
+    </body>
 </html>

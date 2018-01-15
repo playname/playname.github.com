@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="hash">
+    <head>
+        <title>Hash genarator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        
+        <script src="js/main.js"></script>
+        <script src="js/sha1.js"></script>
+        <script src="js/sha3.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link rel="stylesheet" href="resources/styles.css">
+    </head>
+    <body>
+        <div class="row-fluid" ng-controller="hashCtrl">
+            <md-input-container class="col-md-8" flex-gt-sm>
+                <label>Input string</label>
+                <input ng-model="input.string">
+            </md-input-container>
+            
+            <md-input-container class="col-md-3" flex-gt-sm>
+                <label>Hash type</label>
+                <md-select ng-model="input.type">
+                    <md-option ng-repeat="type in types" value="{{type.abbrev}}">
+                        {{type.abbrev}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            
+            <div class="col-md-8">{{output}}</div>
+            
+            <md-button class="col-md-11 md-raised md-primary md-hue-2" ng-click="calculate()">Calculate</md-button>
+        </div>
+    </body>
+</html>
